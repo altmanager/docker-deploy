@@ -28,3 +28,5 @@ You can configure the ports in use in the `compose.yaml` file. The following env
 
 The environment variables are exposed to the frontend service via an [Nginx substitution template](https://github.com/altmanager/altmanager-web/blob/main/env.json.template). Nginx serves them as an `env.json` file. The frontend performs a `GET /env.json` to read them.
 
+Modifying the environment variables requires the frontend container to be restarted for them to take effect.
+
