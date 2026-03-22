@@ -1,0 +1,20 @@
+services:
+  server:
+    image: ghcr.io/altmanager/altmanager-ws:latest
+    restart: unless-stopped
+    # You probably don’t want to expose the server publicly.
+    # If you do, using a reverse proxy with authentication or VPN is recommended.
+    ports:
+      - "127.0.0.1:${ALTMANAGER_PORT:-14454}:${ALTMANAGER_PORT:-14454}"
+    environment:
+      - ALTMANAGER_PORT=${ALTMANAGER_PORT:-14454}
+    volumes:
+      - /app/data
+
+  frontend:
+    image: ghcr.io/altmanager/altmanager-web:latest
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    environment:
+      - ALTMANAGER_SERVER=${ALTMANAGER_SERVER:-ws://localhost:14454}
