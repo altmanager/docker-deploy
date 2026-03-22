@@ -5,7 +5,7 @@ Deploys the AltManager backend server and web frontend using Docker Compose.
 ## Installing
 
 ```sh
-git clone git@github.com:altmanager/docker-deploy.git altmanager
+git clone https://github.com/altmanager/docker-deploy.git altmanager
 cd altmanager
 docker compose up -d
 ```
