@@ -9,7 +9,7 @@ services:
     environment:
       - ALTMANAGER_PORT=${ALTMANAGER_PORT:-14454}
     volumes:
-      - altmanager_data:/app
+      - altmanager_data:/app/.data
 
   frontend:
     image: ghcr.io/altmanager/altmanager-web:latest
